@@ -45,7 +45,7 @@ def tokenizer(doc):
 
 def col():
     bn = []
-    with open("bn-en/GlobalVoices.bn-en.bn", 'r') as bnfile:
+    with open("training.nor.bn", 'r') as bnfile:
         for line in bnfile:
             bn.append(line.replace('\n', ''))
 
@@ -54,7 +54,7 @@ def col():
     for i in range (len(bn)):
         bn_tok.append(tokenizer(bn[i]))
     # print(bn_tok)
-    with open("train.tok.bn", 'w') as outfile:
+    with open("training.tok.bn", 'w') as outfile:
         for i in range (len(bn_tok)):
             outfile.write(bn_tok[i] + '\n')
 
